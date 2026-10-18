@@ -47,12 +47,34 @@ ul {
   border-bottom: 1px solid var(--line);
 }
 
+/* Section headings: testing station, breakout boards */
+h2 {
+  margin: 32px 0 0;
+  font-size: 20px;
+}
+
+/* The testing station: render left, text right, stacked on narrow screens */
+.board.wide {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 24px;
+  align-items: center;
+  margin: 16px 0 0;
+}
+
+@media (max-width: 640px) {
+  .board.wide {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
 /* One tile per board: two or three columns, one on narrow screens */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 32px 24px;
-  margin: 32px 0;
+  margin: 16px 0 32px;
 }
 
 .board {
@@ -73,11 +95,11 @@ ul {
   transform: scale(1.03);
 }
 
-.board h2 {
+.board h3 {
   margin: 8px 0 0;
   font-size: 18px;
 }
 
-.board:hover h2 {
+.board:hover h3 {
   text-decoration: underline;
 }
